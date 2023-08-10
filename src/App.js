@@ -1,4 +1,6 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
 
 function App() {
   return (
@@ -6,11 +8,39 @@ function App() {
       <Typography variant="h2" component={'h6'} sx={{ color: 'lightseagreen' }}>
         Dilanka Liyanagama
       </Typography>
-      <h1>MUI Tutorial</h1>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </p>
+      <Button
+        variant="contained"
+        color="success"
+        sx={{ margin: '30px' }}
+        disabled
+      >
+        Click Me
+      </Button>
+      <Button variant="text" sx={{ color: 'lightseagreen' }}>
+        Click Me
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{ color: 'lightseagreen', margin: '30px' }}
+        onClick={() => alert('Have a Nice Day!')}
+        size="large"
+      >
+        Click Me For Action
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{ margin: '30px' }}
+        startIcon={<DeleteIcon />}
+      >
+        Delete
+      </Button>
+      <Button
+        variant="contained"
+        sx={{ margin: '30px' }}
+        endIcon={<SendIcon />}
+      >
+        Send
+      </Button>
     </div>
   );
 }
