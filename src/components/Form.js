@@ -1,4 +1,11 @@
-import { Button, TextField } from '@mui/material';
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from '@mui/material';
 import React, { useState } from 'react';
 
 const Form = () => {
@@ -6,6 +13,7 @@ const Form = () => {
     name: '',
     email: '',
     password: '',
+    courses: '',
   });
 
   // handleChange Func
@@ -53,6 +61,21 @@ const Form = () => {
           variant="outlined"
           sx={{ margin: '30px', mt: '-25px' }}
         />
+        <br />
+        <FormControl sx={{ margin: '30px', mt: '-25px', width: '70%' }}>
+          <InputLabel id="menu">Courser</InputLabel>
+          <Select
+            name="courses"
+            label="courses"
+            onChange={handleChange}
+            value={inputs.courses}
+          >
+            <MenuItem value={'MongoDB'}>MongoDB</MenuItem>
+            <MenuItem value={'Express'}>Express</MenuItem>
+            <MenuItem value={'ReactJs'}>ReactJs</MenuItem>
+            <MenuItem value={'NodeJs'}>NodeJs</MenuItem>
+          </Select>
+        </FormControl>
         <br />
         <Button
           color="success"
