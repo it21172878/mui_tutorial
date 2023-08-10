@@ -1,0 +1,70 @@
+import { Button, TextField } from '@mui/material';
+import React, { useState } from 'react';
+
+const Form = () => {
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+  // handleChange Func
+  const handleChange = (e) => {
+    setInputs((prevState) => ({
+      ...prevState,
+      [e.target.name]: [e.target.value],
+    }));
+  };
+
+  //   Form handle
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs);
+  };
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          name="name"
+          value={inputs.name}
+          onChange={handleChange}
+          placeholder="enter name"
+          type="text"
+          variant="outlined"
+          sx={{ margin: '30px' }}
+        />
+        <br />
+        <TextField
+          name="email"
+          value={inputs.email}
+          onChange={handleChange}
+          placeholder="enter email"
+          type="email"
+          variant="outlined"
+          sx={{ margin: '30px', mt: '-25px' }}
+        />
+        <br />
+        <TextField
+          name="password"
+          value={inputs.password}
+          onChange={handleChange}
+          placeholder="enter password"
+          type="password"
+          variant="outlined"
+          sx={{ margin: '30px', mt: '-25px' }}
+        />
+        <br />
+        <Button
+          color="success"
+          variant="contained"
+          type="submit"
+          sx={{ margin: '30px', mt: '-10px' }}
+        >
+          Submit
+        </Button>
+      </form>
+    </>
+  );
+};
+
+export default Form;

@@ -1,6 +1,7 @@
-import { Button, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -41,6 +42,27 @@ function App() {
       >
         Send
       </Button>
+      <br />
+      <br />
+      <TextField
+        type="text"
+        placeholder="name"
+        variant="standard"
+        sx={{ margin: '30px' }}
+      />
+      <TextField
+        type="text"
+        placeholder="name"
+        variant="outlined"
+        sx={{ margin: '30px' }}
+      />
+      <TextField
+        type="text"
+        placeholder="name"
+        variant="filled"
+        sx={{ margin: '30px' }}
+      />
+      <Form />
     </div>
   );
 }
