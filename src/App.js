@@ -1,7 +1,16 @@
-import { AppBar, Tab, Tabs, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  CircularProgress,
+  LinearProgress,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import { useState } from 'react';
 import Cards from './components/Cards';
 import Accord from './components/Accord';
+import SnacksBar from './components/SnacksBar';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -28,6 +37,11 @@ function App() {
         <Cards />
       </div>
       <Accord />
+      <SnacksBar />
+      <br />
+      <br />
+      <CircularProgress value={75} color="secondary" />
+      <LinearProgress value={75} color="secondary" />
     </div>
   );
 }
