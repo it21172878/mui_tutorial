@@ -4,11 +4,17 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Cards = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <Card
@@ -32,11 +38,24 @@ const Cards = () => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
+          <Button size="small" color="primary" onClick={() => setOpen(true)}>
+            Delete
           </Button>
         </CardActions>
       </Card>
+
+      <Dialog open={open}>
+        <DialogTitle>Are You Sure?</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure to delete this product?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>Cancel</Button>
+          <Button>Delete</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
