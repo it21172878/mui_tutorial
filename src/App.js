@@ -1,22 +1,31 @@
-import { AppBar, Button, Toolbar, Typography } from '@mui/material';
-import Form from './components/Form';
+import { AppBar, Tab, Tabs, Toolbar, Typography } from '@mui/material';
+import { useState } from 'react';
+import Cards from './components/Cards';
 
 function App() {
+  const [value, setValue] = useState(0);
   return (
     <div>
       <AppBar>
         <Toolbar>
           <Typography variant="h4">DILANKA</Typography>
-          <Button
-            variant="contained"
-            color="success"
+          <Tabs
             sx={{ marginLeft: 'auto' }}
+            value={value}
+            onChange={(e, val) => setValue(val)}
+            textColor="inherit"
+            indicatorColor="secondary"
           >
-            SignIn
-          </Button>
+            <Tab label="Home" />
+            <Tab label="About" />
+            <Tab label="Contact" />
+          </Tabs>
         </Toolbar>
       </AppBar>
-      <Form />
+      {/* <Form /> */}
+      <div style={{ marginTop: '100px' }}>
+        <Cards />
+      </div>
     </div>
   );
 }

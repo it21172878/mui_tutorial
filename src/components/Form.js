@@ -31,7 +31,16 @@ const Form = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        style={{
+          marginTop: '60px',
+          backgroundColor: 'lightcyan',
+          padding: '20px',
+          borderRadius: '5px',
+          width: '70%',
+        }}
+        onSubmit={handleSubmit}
+      >
         <TextField
           name="name"
           value={inputs.name}
