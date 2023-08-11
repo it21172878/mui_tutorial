@@ -2,6 +2,7 @@ import {
   AppBar,
   CircularProgress,
   LinearProgress,
+  Rating,
   Tab,
   Tabs,
   Toolbar,
@@ -42,6 +43,14 @@ function App() {
       <br />
       <CircularProgress value={75} color="secondary" />
       <LinearProgress value={75} color="secondary" />
+      <br />
+      <br />
+      <Rating
+        value={value}
+        onChange={(e, val) => setValue(val)}
+        precision={0.5}
+      />
+      <Typography>Rated {value !== undefined ? value : 0} start</Typography>
     </div>
   );
 }
