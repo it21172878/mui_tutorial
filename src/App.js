@@ -1,6 +1,7 @@
 import { AppBar, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import Cards from './components/Cards';
+import Accord from './components/Accord';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -26,6 +27,7 @@ function App() {
       <div style={{ marginTop: '100px' }}>
         <Cards />
       </div>
+      <Accord />
     </div>
   );
 }
